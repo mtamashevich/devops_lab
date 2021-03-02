@@ -6,8 +6,10 @@ import json
 
 class Fileclass:
     fextention = "txt"
+    
     def changeext(self, newext):
         self.fextention = newext
+
 
 fileext = Fileclass()
 
