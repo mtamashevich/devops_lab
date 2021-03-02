@@ -1,12 +1,12 @@
 import time
 import psutil
-import math
 import argparse
 import json
 
+
 class Fileclass:
     fextention = "txt"
-    def changeext(self,newext):
+    def changeext(self, newext):
         self.fextention = newext
 
 fileext = Fileclass()
@@ -28,26 +28,25 @@ while True:
     i += 1
     timestamp = time.ctime()
 
-    #Overall CPU load
+    # Overall CPU load
     cpu = psutil.cpu_percent(interval=1)
-    #printstring += 'CPU load: ' + str(cpu) + '%, '
-    #Overall memory usage
+    # printstring += 'CPU load: ' + str(cpu) + '%, '
+    # Overall memory usage
     vmem = psutil.virtual_memory()
     smem = psutil.swap_memory()
     mem = (vmem.used + smem.used)
 
-    #Overall virtual memory usage
-    #vmem.percent
+    # Overall virtual memory usage
+    # vmem.percent
 
-    #IO information
+    # IO information
     diskio = psutil.disk_io_counters()
     diskr = diskio.read_bytes
     diskw = diskio.write_bytes
 
-
     net = psutil.net_io_counters()
-    #printstring += 'Network sent pkt: ' + str(net.packets_sent) + ', '
-    #printstring += 'Network recive pkt: ' + str(net.packets_recv) + '.'
+    # printstring += 'Network sent pkt: ' + str(net.packets_sent) + ', '
+    # printstring += 'Network recive pkt: ' + str(net.packets_recv) + '.'
 
     x = {
         "Snapshot": i,
@@ -72,4 +71,4 @@ while True:
         f.close()
 
     time.sleep(args.t)
-#print(printstring)
+# print(printstring)
