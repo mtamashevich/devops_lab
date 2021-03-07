@@ -4,7 +4,7 @@ Instalation:
 pip install ./
 
 Run:
-snapshot [-t <time in sec>] [-f <file type txt or json >]
+snapshot [-t time_in_sec] [-f file_type_txt_or_json]
 
 Example:
 
