@@ -3,6 +3,7 @@ import requests
 per_page = 150
 repo = "alenaPy/devops_lab"
 
+
 def get_pulls(state):
     params1 = {'state': state, 'per_page': per_page}
     params2 = {'per_page': per_page}
@@ -25,7 +26,7 @@ def get_pulls(state):
 
     out = []
     for item in pull:
-        out.append({'num': item['number'], 'title': item['title'],\
+        out.append({'num': item['number'], 'title': item['title'],
             'link': item['html_url']})
 
     return out
