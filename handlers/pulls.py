@@ -1,6 +1,6 @@
 import requests
 
-per_page = 150
+per_page = 100
 repo = "alenaPy/devops_lab"
 
 
@@ -13,15 +13,15 @@ def get_pulls(state):
             is:pr%20label:"{state}"%20repo:{repo}'
     if state in ('open', 'closed'):
         response = requests.get(url_pulls, params=params1)
-        print(response.url)
+        # print(response.url)
         pull = response.json()
     elif state in ('needs work', 'accepted'):
         response = requests.get(url_label, params=params2)
         pull = response.json()['items']
-        print(response.url)
+        # print(response.url)
     else:
         response = requests.get(url_pulls, params=params3)
-        print(response.url)
+        # print(response.url)
         pull = response.json()
 
     out = []
