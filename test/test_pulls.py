@@ -9,13 +9,15 @@ class TestPrime(TestCase):
 
     def test_status(self):
 
-        list1 = {'num': 15,
+        list1 = {
+            'num': 15,
             'title': 'Homework1: Maksimelyan Tamashevich',
             'link': 'https://github.com/alenaPy/devops_lab/pull/15'
         }
 
-        list2 = {'num': 1,
-            'title': 'Test PR', 
+        list2 = {
+            'num': 1,
+            'title': 'Test PR',
             'link': 'https://github.com/alenaPy/devops_lab/pull/1'
         }
         self.assertEqual(pulls.get_pulls('open').count(list1), 1)
