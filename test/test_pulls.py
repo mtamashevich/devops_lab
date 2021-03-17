@@ -26,8 +26,8 @@ class TestPrime(TestCase):
         self.assertNotEqual(pulls.get_pulls('open').count(list2), 1)
 
     def test_labels(self):
-        self.assertEqual(pulls.get_pulls('accepted')[0]['num'], 101)
-        self.assertEqual(pulls.get_pulls('needs work')[0]['num'], 102)
+        self.assertEqual(pulls.get_pulls('accepted')[-14]['num'], 15)
+        self.assertEqual(pulls.get_pulls('needs work')[-1]['num'], 22)
 
     def tearDown(self):
         """Finish"""
